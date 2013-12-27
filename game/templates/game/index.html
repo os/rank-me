@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load admin_urls %}
+{% load admin_urls game_score_chart %}
 
 {% block content %}
 
@@ -38,5 +38,18 @@
                 {% endif %}
             </div>
         </div>
+
+        <div class="span12">
+            <div class="score-chart-week">
+                <h2>Score evolution</h2>
+                {% score_chart  %}
+            </div>
+        </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ block.super }}
+    <script type="text/javascript" src="http://kozea.github.com/pygal.js/javascripts/svg.jquery.js"></script>
+    <script type="text/javascript" src="http://kozea.github.com/pygal.js/javascripts/pygal-tooltips.js"></script>
 {% endblock %}

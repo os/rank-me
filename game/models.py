@@ -97,3 +97,10 @@ class HistoricalScore(models.Model):
     date = models.DateTimeField(default=timezone.now)
     score = models.IntegerField()
     team = models.ForeignKey(Team, related_name='historical_scores')
+
+    def __unicode__(self):
+        return u"%s %s (%s)" % (
+            self.team,
+            self.score,
+            self.date.strftime('%d-%m-%Y'),
+        )

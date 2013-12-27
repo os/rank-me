@@ -18,6 +18,8 @@
             {% block content %}{% endblock %}
         </div>
 
-        <script src="/static/vendors/jquery/jquery.min.js"></script>
+        {% block javascripts %}
+            <script src="/static/vendors/jquery/jquery.min.js"></script>
+        {% endblock %}
     </body>
 </html>
