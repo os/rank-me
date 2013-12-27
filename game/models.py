@@ -48,6 +48,9 @@ class Team(models.Model):
 
     objects = TeamManager()
 
+    def get_name(self):
+        return u" / ".join([user.username for user in self.users.all()])
+
     def __unicode__(self):
         return u" / ".join([user.username for user in self.users.all()])
 
